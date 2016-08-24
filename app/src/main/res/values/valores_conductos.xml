@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="valores_conductos">
+        <item>Conducto...</item>
+        <item>AeroFlash</item>
+        <item>Flecha Amarilla</item>
+        <item>Fedex</item>
+        <item>Senda Express</item>
+        <item>Cam. Biochem</item>
+    </string-array>
+</resources>

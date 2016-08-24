@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Aplicacion de Pedidos</string>
+    <string name="lbl_cliente">Cliente: </string>
+    <string name="lbl_familia">Familia: </string>
+    <string name="btn_enviar">Guardar</string>
+    <string name="lbl_subTipo">SubTipo: </string>
+    <string name="lbl_tipo_venta">Tipo Venta: </string>
+    <string name="lbl_conducto">Conducto: </string>
+    <string name="lbl_comentarios">Comentarios: </string>
+
+    <string name="lbl_partida">#</string>
+    <string name="lbl_producto">PRODUCTO</string>
+    <string name="lbl_cantidad">CANTIDAD</string>
+</resources>

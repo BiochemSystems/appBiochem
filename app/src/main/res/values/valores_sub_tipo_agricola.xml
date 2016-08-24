@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="valores_sub_tipo_agricola">
+        <item>Seleccione un sub tipo...</item>
+        <item>Normal</item>
+        <item>Paq. Granos</item>
+    </string-array>
+</resources>
