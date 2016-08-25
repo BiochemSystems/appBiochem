@@ -38,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        MyDBHandler dbHandler = new MyDBHandler(this, null, null, 1);
+        dbHandler.checkDBStatus(); // Analiza la lista de sincronización / forza creacion de la base de datos.
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Resources res = getResources();
