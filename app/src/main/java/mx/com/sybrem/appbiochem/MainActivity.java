@@ -31,7 +31,9 @@ public class MainActivity extends AppCompatActivity {
     private AutoCompleteTextView autoCompleteProducto10;
 
     //ARRAY PARA LOS CLIENTES
-    private String[] clientes = {"Atanacio Macias de Anda", "Fernando Lopez Partida", "Maria Guadalupe Luna", "Agricol el Vencedor"};
+    //private String[] clientes = {"Atanacio Macias de Anda", "Fernando Lopez Partida", "Maria Guadalupe Luna", "Agricol el Vencedor"};
+    // Se declara por separado la variable de array de la asignación del contenido de la tabla.
+    private String[] clientes;
 
     //ARRAY PARA LOS PRODUCTOS
     private String[] productos = {"Shampoo Aloe Vera", "Garrametrin Forte", "Pulgaton Shampoo", "Control Rat"};
@@ -40,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         MyDBHandler dbHandler = new MyDBHandler(this, null, null, 1);
         dbHandler.checkDBStatus(); // Analiza la lista de sincronización / forza creacion de la base de datos.
+        clientes = dbHandler.getClientes(); // Metodo que se trae la lista de clientes de la tabla y la copia al array.
 
 
         super.onCreate(savedInstanceState);

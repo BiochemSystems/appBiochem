@@ -7,11 +7,13 @@ import android.content.Context;
 import android.content.ContentValues;
 import android.database.Cursor;
 
+import java.util.ArrayList;
 
 
 /*************************************************************************************
  * Created by mrendonr on 23/08/16.                                                  *
  * Clase usada para la ejecución de los querys con la base de datos local            *
+ * 26/Agosto/2016: Se agrega el metodo getClientes().                                *
  *************************************************************************************/
 public class MyDBHandler  extends SQLiteOpenHelper
 {
@@ -453,6 +455,7 @@ public class MyDBHandler  extends SQLiteOpenHelper
         onCreate(db);
     }
 
+    // Al colocarse al inicio del código provoca y forza la creación física de la BD así como sus tablas.
     public void checkDBStatus()
     {
         String query = "SELECT * FROM " + TABLE_GL_SYNC;
@@ -460,6 +463,20 @@ public class MyDBHandler  extends SQLiteOpenHelper
         Cursor cursor = db.rawQuery(query, null);
         cursor.close();
         db.close();
+    }
+
+    // Metodo que es usado para obtener los datos de los clientes de la tabla vn_cat_clientes los coloca en un array y los regresa en la función.
+    public String[] getClientes()
+    {
+        Cursor cursor = getReadableDatabase().rawQuery("select '[' || cve_usuario || '] ' || nombre as cliente from vn_cat_clientes;", null);
+        cursor.moveToFirst();
+        ArrayList<String> nombreCliente = new ArrayList<String>();
+        while(!cursor.isAfterLast()) {
+            nombreCliente.add(cursor.getString(cursor.getColumnIndex("cliente")));
+            cursor.moveToNext();
+        }
+        cursor.close();
+        return nombreCliente.toArray(new String[nombreCliente.size()]);
     }
 
 
